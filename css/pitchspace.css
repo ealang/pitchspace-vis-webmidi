@@ -1,0 +1,59 @@
+
+svg {
+    position: absolute;
+}
+
+svg text {
+    text-anchor: middle;
+    fill: #EEE;
+}
+
+#ring-background {
+    fill: #303030;
+}
+
+#ring-segments {
+    fill: #282828;
+}
+
+#ring-degree-labels text {
+    font-size: 3px;
+    fill: #888;
+    font-weight: bold;
+}
+
+#ring-note-labels text {
+    font-size: 6px;
+}
+#ring-note-labels text.deselected {
+    font-size: 6px;
+    opacity: 0.1;
+}
+
+#selected-key text {
+    font-size: 8px;
+}
+
+#settings-btn text {
+    opacity: 0.3;
+    font-size: 2.5px;
+}
+
+#settings-btn circle {
+    opacity: 0.1;
+    fill: #444;
+}
+#settings-btn circle:hover {
+    opacity: 0.2;
+    cursor: pointer;
+}
+
+#midi-error-msg {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    display: none;
+    font-size: 80%;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}

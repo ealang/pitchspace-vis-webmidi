@@ -1,0 +1,65 @@
+#settings {
+    width: 100%; 
+    height: 100%; 
+    color: white; 
+    position: absolute;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    display: inline-block;
+}
+
+#settings-background {
+    position: absolute;
+    background: black;
+    opacity: 0.3;
+    width: 100%;
+    height: 100%;
+}
+
+#settings-box-scale, #settings-box-devices {
+    position: absolute;
+    margin: 1em;
+    display: inline-block;
+}
+
+#settings-box-devices {
+    right: 0px;
+    top: 0px;
+}
+
+#settings-box-scale > div, #settings-box-devices > div {
+    opacity: 0.05; 
+    background: white;
+    z-index: 0; 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    border-radius: 5px;
+}
+
+#settings-mode, .settings-tonic, #settings-devices-list {
+    margin: 0.3em;
+    padding: 0.3em;
+    display: inline-block;
+    background: black;
+    vertical-align: top; 
+    list-style-type: none;
+    z-index: 1;
+    position: relative;
+}
+
+#settings-mode li {
+    padding: 0.5 2em;
+}
+
+.settings-tonic:nth-of-type(2n) {
+    margin: 0.3em 0 0.3em 0.3em;
+}
+.settings-tonic:nth-of-type(2n+1) {
+    margin: 0.3em 0.3em 0.3em 0;
+}
+
+.selected {
+    background: white;
+    color: black;
+}
+

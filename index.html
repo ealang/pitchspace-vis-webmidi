@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="css/global.css"><link>
+        <link rel="stylesheet" type="text/css" href="css/pitchspace.css"><link>
+        <link rel="stylesheet" type="text/css" href="css/settings.css"><link>
+    </head>
+    <body>
+        <svg id="circle">
+        </svg>
+        <div id="midi-error-msg">
+            <span>Error starting <a href="http://jazz-soft.net/">Jazz-Plugin</a></span>
+        </div>
+        <div id="settings" style="display: none;">
+            <div id="settings-background"> </div>
+            <div id="settings-box-scale">
+                <div></div>
+                <ul id="settings-mode"></ul>
+                <ul class="settings-tonic"></ul>
+                <ul class="settings-tonic"></ul>
+            </div>
+            <div id="settings-box-devices">
+                <div></div>
+                <ul id="settings-devices-list"><li>No midi devices found</li></ul>
+            </div>
+        </div>
+        <script src="js/WebMIDIAPI.js"></script>
+        <script src="js/d3.v3.js" charset="utf-8"></script>
+        <script src="js/teoria.js"></script>        
+        <script src="js/pitchspace.js"></script>
+    </body>
+</html>
