@@ -89,7 +89,7 @@ class window.View
               .attr("d", makeNoteArc)
 
     drawSettingsPage: (modeList, tonicList, devicesList, selectedMode, selectedTonic, selectedDev) ->
-        LISTSIZE = 13
+        listsize = tonicList.length / 2
         ulify = (data) ->
             return (sel) ->
                 context = sel.selectAll("li").data(data)
@@ -102,18 +102,18 @@ class window.View
             selectors.forEach (selector, i) ->
                 lis = selector.selectAll("li")
                 lis.attr("class", "list-item")
-                if index >= (i * LISTSIZE) and index < ((i + 1) * LISTSIZE)
-                    d3.select(lis[0][index%LISTSIZE]).attr("class", "selected list-item")
+                if index >= (i * listsize) and index < ((i + 1) * listsize)
+                    d3.select(lis[0][index%listsize]).attr("class", "selected list-item")
 
         attachClickHandler = (selectors, label, handler) ->
             selectors.forEach (selector, selIndex) ->
                 selector.selectAll(".list-item").on("click", (text, i) ->
-                    item = selIndex * LISTSIZE + i
+                    item = selIndex * listsize + i
                     drawSelection(selectors, item)
                     handler(label, item))
 
-        layers.settingsTonics[0].call(ulify(tonicList.slice(0, LISTSIZE)))
-        layers.settingsTonics[1].call(ulify(tonicList.slice(LISTSIZE, LISTSIZE * 2)))
+        layers.settingsTonics[0].call(ulify(tonicList.slice(0, listsize)))
+        layers.settingsTonics[1].call(ulify(tonicList.slice(listsize, listsize * 2)))
         layers.settingsMode.call(ulify(modeList))
         layers.settingsDevices.call(ulify(devicesList))
 

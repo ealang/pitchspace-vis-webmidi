@@ -13,33 +13,8 @@ MODES = [
     "Phrygian",
     "Locrian"]
 
-TONICS = [
-    "C",
-    "G",
-    "D",
-    "A",
-    "E",
-    "B",
-    "F" + S,
-    "G" + F,
-    "D" + F,
-    "A" + F,
-    "E" + F,
-    "B" + F,
-    "F",
-    "A",
-    "E",
-    "B",
-    "F" + S,
-    "C" + S,
-    "G" + S,
-    "D" + S,
-    "E" + F,
-    "B" + F,
-    "F",
-    "C",
-    "G",
-    "D"]
+TONICS = ["C", "C" + S, "D", "D" + S, "E", "F", "F" + S, "G", "G" + S, "A", "A" + S, "B",
+          "C", "D" + F, "D", "E" + F, "E", "F", "G" + F, "G", "A" + F, "A", "B" + F, "B"]
 
 class App
     constructor: (view, midi) ->
