@@ -11,7 +11,10 @@ decodeMidiEvent = (event) ->
 
 class MidiInstance
     constructor: (access) ->
-        @inputs = access?.inputs()
+        inputs = []
+        access?.inputs.forEach((device) => inputs.push(device))
+
+        @inputs = inputs
         @userCallback = null
         @selectedInput = null
         @isValid = access != null
@@ -23,12 +26,12 @@ class MidiInstance
         
     selectDevice: (id) ->
         if @selectedInput != null
-            @inputs[@selectedInput].removeEventListener("midimessage", @onmidimessage)
+            @inputs[@selectedInput].onmidimessage = undefined
         @selectedInput = id
-        @inputs[id].addEventListener("midimessage", @onmidimessage, false)
+        @inputs[id].onmidimessage = @onmidimessage
 
     getDevicesList: ->
-        input.name for input in (@inputs || [])
+        input.name for input in @inputs
     
     onKeyPress: (callback) ->
         @userCallback = callback
